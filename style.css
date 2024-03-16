@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background-color: #d2d2d2;
+  position: relative;
+}
+
+body {
+  --pan-x: 0px;
+  --pan-y: 0px;
+  --scale: 1;
+  overflow: hidden;
+}
+
+body.will-pan {
+  cursor: grab;
+}
+
+.node {
+  background-color: white;
+  width: 100px;
+  height: 100px;
+}
+
+.node__container {
+  position: absolute;
+}
+.node__container.dragging {
+  border: 1px solid black;
+}
+
+#nodes-container {
+  transform: translate(var(--pan-x), var(--pan-y)) scale(var(--scale));
+  transform-origin: left top;
+}
